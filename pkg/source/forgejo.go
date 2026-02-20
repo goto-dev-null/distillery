@@ -70,7 +70,9 @@ func (s *Forgejo) sourceRun(ctx context.Context) error {
 	cacheFile := filepath.Join(s.Options.Config.GetMetadataPath(), fmt.Sprintf("cache-%s", s.GetID()))
 
 	s.Client = forgejo.NewClient(httpcache.NewTransport(diskcache.New(cacheFile)).Client())
-	s.Client.SetBaseURL(s.BaseURL)
+	if s.BaseURL != "" {
+		s.Client.SetBaseURL(s.BaseURL)
+	}
 
 	token := s.Options.Settings["forgejo-token"].(string)
 	if token != "" {
@@ -133,7 +135,7 @@ func (s *Forgejo) FindRelease(ctx context.Context) error {
 				WithField("repo", s.GetRepo()).
 				Tracef("found release: %s", r.TagName)
 
-			if includePreReleases && r.Prerelease {
+			if s.Version == provider.VersionLatest && includePreReleases && r.Prerelease {
 				s.Version = strings.TrimPrefix(r.TagName, "v")
 				release = r
 				break
