@@ -41,7 +41,7 @@ See full documentation at [Installation](https://dist.sh/installation/)
 
 **Note:** the installation script **DO NOT CURRENTLY** try to modify your path, you will need to do that manually.
 
-### MacOS/Linux
+### macOS/Linux
 ```bash
 curl --proto '=https' --tlsv1.2 -LsSf https://get.dist.sh | sh
 ```
@@ -53,7 +53,7 @@ iwr https://get.dist.sh/install.ps1 -useb | iex
 
 ### Adjust Your Path
 
-#### MacOS/Linux
+#### macOS/Linux
 
 ```bash
 export PATH=$HOME/.distillery/bin:$PATH
@@ -120,7 +120,7 @@ Install a binary from Codeberg.
 dist install codeberg/owner/repo
 ```
 
-Oftentimes installing from GitHub, GitLab, or Codeberg is sufficient, but if you are on a MacOS system and Homebrew
+Oftentimes installing from GitHub, GitLab, or Codeberg is sufficient, but if you are on a macOS system and Homebrew
 has the binary you want, you can install it using the `homebrew` scope. I would generally still recommend just
 installing from GitHub, GitLab, or Codeberg directly.
 
@@ -160,7 +160,7 @@ This is the default directory structure that distillery uses. Some of this can b
       - example: `github/ekristen/aws-nuke/v2.15.0/aws-nuke`
       - example: `hashicorp/terraform/v0.14.7/terraform`
 - Cache directory (downloads, http caching)
-  - MacOS `$HOME/Library/Caches/distillery`
+  - macOS `$HOME/Library/Caches/distillery`
   - Linux `$HOME/.cache/distillery`
   - Windows `$HOME/AppData/Local/distillery`
 
