@@ -2,7 +2,6 @@ package forgejo
 
 import "time"
 
-// Release represents a Forgejo/Gitea release.
 type Release struct {
 	ID          int64     `json:"id"`
 	TagName     string    `json:"tag_name"`
@@ -15,7 +14,6 @@ type Release struct {
 	Assets      []*Asset  `json:"assets"`
 }
 
-// Asset represents a single release asset attached to a Forgejo/Gitea release.
 type Asset struct {
 	ID                 int64     `json:"id"`
 	Name               string    `json:"name"`

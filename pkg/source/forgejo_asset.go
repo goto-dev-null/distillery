@@ -53,12 +53,12 @@ func (a *ForgejoAsset) Download(ctx context.Context) error {
 
 	logrus.Debugf("downloading asset: %s", a.Meta.BrowserDownloadURL)
 
-	req, err := http.NewRequestWithContext(ctx, http.MethodGet, a.Meta.BrowserDownloadURL, http.NoBody)
+	req, err := http.NewRequestWithContext(ctx, "GET", a.Meta.BrowserDownloadURL, http.NoBody)
 	if err != nil {
 		return err
 	}
 
-	req.Header.Set("User-Agent", fmt.Sprintf("%s/%s", common.NAME, common.AppVersion))
+	req.Header.Add("User-Agent", fmt.Sprintf("%s/%s", common.NAME, common.AppVersion))
 	if a.Forgejo.Client.GetToken() != "" {
 		req.Header.Set("Authorization", fmt.Sprintf("token %s", a.Forgejo.Client.GetToken()))
 	}
@@ -91,7 +91,7 @@ func (a *ForgejoAsset) Download(ctx context.Context) error {
 	_ = os.WriteFile(assetFileHash, []byte(fmt.Sprintf("%x", hasher.Sum(nil))), 0600)
 	a.Hash = string(hasher.Sum(nil))
 
-	logrus.Tracef("downloaded asset to: %s", tmpFile.Name())
+	logrus.Tracef("Downloaded asset to: %s", tmpFile.Name())
 
 	return nil
 }
