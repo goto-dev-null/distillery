@@ -70,9 +70,10 @@ nav:
   - Home: index.md
   - Installation: installation.md
   - Config:
-    - Overview: config.md
-    - Aliases: config/aliases.md
+      - Overview: config.md
+      - Aliases: config/aliases.md
   - Distfile: distfile.md
   - Architecture: architecture.md
-  - Supported Sources: sources.md
-
+  - Sources:
+      - Overview: sources.md
+      - Forgejo / Codeberg: sources/forgejo.md
