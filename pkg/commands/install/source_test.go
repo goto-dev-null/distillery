@@ -144,18 +144,20 @@ func Test_NewSource(t *testing.T) {
 		{
 			source: "codeberg/owner/repo",
 			want: &source.Forgejo{
-				Owner:   "owner",
-				Repo:    "repo",
-				Version: "latest",
+				Owner:      "owner",
+				Repo:       "repo",
+				Version:    "latest",
+				SourceName: source.CodebergSource,
 			},
 			wantBaseURL: source.CodebergBaseURL,
 		},
 		{
 			source: "codeberg/owner/repo@2.0.0",
 			want: &source.Forgejo{
-				Owner:   "owner",
-				Repo:    "repo",
-				Version: "2.0.0",
+				Owner:      "owner",
+				Repo:       "repo",
+				Version:    "2.0.0",
+				SourceName: source.CodebergSource,
 			},
 			wantBaseURL: source.CodebergBaseURL,
 		},

@@ -29,7 +29,7 @@ func (a *ForgejoAsset) ID() string {
 }
 
 func (a *ForgejoAsset) Path() string {
-	return filepath.Join("forgejo", a.Forgejo.GetOwner(), a.Forgejo.GetRepo(), a.Forgejo.Version)
+	return filepath.Join(a.Forgejo.GetSource(), a.Forgejo.GetOwner(), a.Forgejo.GetRepo(), a.Forgejo.Version)
 }
 
 func (a *ForgejoAsset) Download(ctx context.Context) error {

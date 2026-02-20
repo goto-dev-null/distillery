@@ -75,8 +75,14 @@ configured Forgejo providers.
 
 ## Directory Structure
 
-Binaries installed from any Forgejo source are stored under the `forgejo` namespace in the opt
-directory, regardless of whether they came from Codeberg or a custom instance:
+Binaries installed from Codeberg are stored under the `codeberg` namespace:
+
+```
+~/.distillery/opt/codeberg/owner/repo/version/binary
+```
+
+Binaries installed from a custom configured Forgejo provider are stored under the `forgejo` namespace,
+regardless of the provider name used on the command line:
 
 ```
 ~/.distillery/opt/forgejo/owner/repo/version/binary

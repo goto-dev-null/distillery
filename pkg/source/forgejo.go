@@ -24,8 +24,9 @@ const CodebergBaseURL = "https://codeberg.org/api/v1"
 type Forgejo struct {
 	provider.Provider
 
-	Client  *forgejo.Client
-	BaseURL string
+	Client     *forgejo.Client
+	BaseURL    string
+	SourceName string
 
 	Owner   string
 	Repo    string
@@ -35,6 +36,9 @@ type Forgejo struct {
 }
 
 func (s *Forgejo) GetSource() string {
+	if s.SourceName != "" {
+		return s.SourceName
+	}
 	return ForgejoSource
 }
 func (s *Forgejo) GetOwner() string {
