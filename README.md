@@ -117,7 +117,7 @@ dist install gitlab/gitlab-org/gitlab-runner
 
 Install a binary from Codeberg.
 ```console
-dist install codeberg/owner/repo
+dist install codeberg/forgejo-contrib/forgejo-cli
 ```
 
 Oftentimes installing from GitHub, GitLab, or Codeberg is sufficient, but if you are on a macOS system and Homebrew
