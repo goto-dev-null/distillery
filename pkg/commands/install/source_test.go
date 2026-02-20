@@ -172,8 +172,9 @@ func Test_NewSource(t *testing.T) {
 		{
 			source: "myforgejo/someowner/somerepo",
 			want: &source.Forgejo{
-				Owner: "someowner",
-				Repo:  "somerepo",
+				Owner:      "someowner",
+				Repo:       "somerepo",
+				SourceName: "myforgejo",
 			},
 			wantBaseURL: "https://git.example.com/api/v1",
 			setupConfig: func(cfg *config.Config) {
@@ -188,8 +189,9 @@ func Test_NewSource(t *testing.T) {
 		{
 			source: "myforgejo/someowner/somerepo@1.2.3",
 			want: &source.Forgejo{
-				Owner: "someowner",
-				Repo:  "somerepo",
+				Owner:      "someowner",
+				Repo:       "somerepo",
+				SourceName: "myforgejo",
 			},
 			wantBaseURL: "https://git.example.com/api/v1",
 			setupConfig: func(cfg *config.Config) {

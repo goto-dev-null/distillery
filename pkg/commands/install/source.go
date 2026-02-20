@@ -189,11 +189,12 @@ func NewSource(src string, opts *provider.Options) (provider.ISource, error) { /
 					repo := strings.Join(parts[2:], "/")
 
 					return &source.Forgejo{
-						Provider: provider.Provider{Options: opts, OSConfig: detectedOS},
-						BaseURL:  p.BaseURL,
-						Owner:    owner,
-						Repo:     repo,
-						Version:  version,
+						Provider:   provider.Provider{Options: opts, OSConfig: detectedOS},
+						BaseURL:    p.BaseURL,
+						SourceName: pn,
+						Owner:      owner,
+						Repo:       repo,
+						Version:    version,
 					}, nil
 				}
 			}

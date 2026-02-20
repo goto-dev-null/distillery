@@ -81,12 +81,15 @@ Binaries installed from Codeberg are stored under the `codeberg` namespace:
 ~/.distillery/opt/codeberg/owner/repo/version/binary
 ```
 
-Binaries installed from a custom configured Forgejo provider are stored under the `forgejo` namespace,
-regardless of the provider name used on the command line:
+Binaries installed from a custom configured Forgejo provider are stored under the provider's name as
+defined in your configuration file:
 
 ```
-~/.distillery/opt/forgejo/owner/repo/version/binary
+~/.distillery/opt/myforgejo/owner/repo/version/binary
 ```
+
+This means `dist list` will show the provider name, preserving a clear record of where each binary
+came from.
 
 ## Aliases
 
