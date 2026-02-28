@@ -140,27 +140,6 @@ func Test_NewSource(t *testing.T) {
 			source: "unknown/some-owner/some-repo/extra@3.1.1",
 			error:  true,
 		},
-		// Codeberg shorthand
-		{
-			source: "codeberg/owner/repo",
-			want: &source.Forgejo{
-				Owner:      "owner",
-				Repo:       "repo",
-				Version:    "latest",
-				SourceName: source.CodebergSource,
-			},
-			wantBaseURL: source.CodebergBaseURL,
-		},
-		{
-			source: "codeberg/owner/repo@2.0.0",
-			want: &source.Forgejo{
-				Owner:      "owner",
-				Repo:       "repo",
-				Version:    "2.0.0",
-				SourceName: source.CodebergSource,
-			},
-			wantBaseURL: source.CodebergBaseURL,
-		},
 		// forgejo as defaultSource is not supported — requires an explicit base URL via a
 		// configured provider, so owner/repo with no prefix should error.
 		{

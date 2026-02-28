@@ -224,7 +224,7 @@ func Flags() []cli.Flag {
 		},
 		&cli.StringFlag{
 			Name:     "forgejo-token",
-			Usage:    "Forgejo token to use for Forgejo/Codeberg API requests",
+			Usage:    "Forgejo token to use for Forgejo API requests",
 			EnvVars:  []string{"DISTILLERY_FORGEJO_TOKEN"},
 			Category: "Authentication",
 		},

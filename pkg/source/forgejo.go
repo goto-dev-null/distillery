@@ -18,9 +18,7 @@ import (
 )
 
 const (
-	ForgejoSource   = "forgejo"
-	CodebergSource  = "codeberg"
-	CodebergBaseURL = "https://codeberg.org/api/v1"
+	ForgejoSource = "forgejo"
 )
 
 type Forgejo struct {

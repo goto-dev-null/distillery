@@ -67,8 +67,8 @@ func TestForgejo_GetSource_DefaultsToForgejoSource(t *testing.T) {
 }
 
 func TestForgejo_GetSource_ReturnsSourceNameWhenSet(t *testing.T) {
-	s := &source.Forgejo{SourceName: "codeberg"}
-	assert.Equal(t, "codeberg", s.GetSource())
+	s := &source.Forgejo{SourceName: "myforgejo"}
+	assert.Equal(t, "myforgejo", s.GetSource())
 }
 
 func TestForgejo_GetSource_ReturnsCustomProviderName(t *testing.T) {
@@ -97,8 +97,8 @@ func TestForgejo_GetID_WithDefaultSource(t *testing.T) {
 }
 
 func TestForgejo_GetID_WithSourceName(t *testing.T) {
-	s := &source.Forgejo{Owner: "myowner", Repo: "myrepo", SourceName: "codeberg"}
-	assert.Equal(t, "codeberg/myowner/myrepo", s.GetID())
+	s := &source.Forgejo{Owner: "myowner", Repo: "myrepo", SourceName: "myforgejo"}
+	assert.Equal(t, "myforgejo/myowner/myrepo", s.GetID())
 }
 
 func TestForgejo_GetVersion_NilRelease(t *testing.T) {

@@ -11,7 +11,7 @@ import (
 	"github.com/ekristen/distillery/pkg/common"
 )
 
-const baseURL = "https://codeberg.org/api/v1"
+const baseURL = "https://forgejo.example.com/api/v1"
 
 func NewClient(client *http.Client) *Client {
 	return &Client{

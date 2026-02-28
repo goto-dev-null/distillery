@@ -106,7 +106,7 @@ func TestForgejoAsset_Path(t *testing.T) {
 		Owner:      "owner",
 		Repo:       "repo",
 		Version:    "1.0.0",
-		SourceName: "codeberg",
+		SourceName: "myforgejo",
 	}
 	forgejoSource.Client = forgejo.NewClient(http.DefaultClient)
 
@@ -116,7 +116,7 @@ func TestForgejoAsset_Path(t *testing.T) {
 		ReleaseAsset: &forgejo.ReleaseAsset{ID: 1},
 	}
 
-	assert.Equal(t, filepath.Join("codeberg", "owner", "repo", "1.0.0"), a.Path())
+	assert.Equal(t, filepath.Join("myforgejo", "owner", "repo", "1.0.0"), a.Path())
 }
 
 func TestForgejoAsset_Download_AlreadyDownloaded(t *testing.T) {

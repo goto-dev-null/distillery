@@ -20,7 +20,7 @@ dependencies, that's where homebrew shines.
 
 The goal of this project is to install binaries by leverage the collective power of all the developers out there that
 are using tools like [goreleaser](https://goreleaser.com/) and [cargo-dist](https://github.com/axodotdev/cargo-dist)
-and many others to pre-compile their software and put their binaries up on GitHub, GitLab, or Codeberg.
+and many others to pre-compile their software and put their binaries up on GitHub, GitLab, or Forgejo.
 
 ## Documentation
 
@@ -115,12 +115,12 @@ Install a binary from GitLab.
 dist install gitlab/gitlab-org/gitlab-runner
 ```
 
-Install a binary from Codeberg.
+Install a binary from a configured Forgejo instance.
 ```console
-dist install codeberg/forgejo-contrib/forgejo-cli
+dist install myforgejo/owner/repo
 ```
 
-Often times installing from GitHub, GitLab, or Codeberg is sufficient, but if you are on a MacOS system and Homebrew
+Often times installing from GitHub, GitLab, or Forgejo is sufficient, but if you are on a MacOS system and Homebrew
 has the binary you want, you can install it using the `homebrew` scope. I would generally still recommend just
 installing from GitHub or GitLab directly.
 
@@ -132,14 +132,14 @@ dist install homebrew/opentofu
 
 - GitHub
 - GitLab
-- Forgejo / Codeberg (Codeberg works out of the box; any Forgejo instance can be configured)
+- Forgejo
 - Homebrew (binaries only, if anything has a dependency, it will not work at this time)
 - Hashicorp (special handling for their releases, pointing to GitHub repos will automatically pass through)
 - Kubernetes (special handling for their releases, pointing to GitHub repos will automatically pass through)
 
 ### Authentication
 
-Distillery supports authentication for GitHub, GitLab, and Forgejo/Codeberg. There are CLI options to pass
+Distillery supports authentication for GitHub, GitLab, and Forgejo. There are CLI options to pass
 in a token, but the preferred method is to set the appropriate environment variable using a tool like
 [direnv](https://direnv.net/).
 
@@ -147,7 +147,7 @@ in a token, but the preferred method is to set the appropriate environment varia
 |---|---|---|
 | GitHub | `DISTILLERY_GITHUB_TOKEN` | `--github-token` |
 | GitLab | `DISTILLERY_GITLAB_TOKEN` | `--gitlab-token` |
-| Forgejo / Codeberg | `DISTILLERY_FORGEJO_TOKEN` | `--forgejo-token` |
+| Forgejo | `DISTILLERY_FORGEJO_TOKEN` | `--forgejo-token` |
 
 ## Directory Structure
 
